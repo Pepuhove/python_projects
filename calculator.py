@@ -13,6 +13,7 @@ def divide(x, y):
     else:
         return "Cannot divide by zero"
 
+
 print("SIMPLE CALCULATOR")
 
 while True:
@@ -21,7 +22,7 @@ while True:
         num2 = float(input("Enter the second number: "))
 
         while True:
-            print("Choose operation:")
+            print("\nChoose operation:")
             print("1. Addition (+)")
             print("2. Subtraction (-)")
             print("3. Multiplication (*)")
@@ -43,16 +44,13 @@ while True:
         elif operation_choice == '4':
             result = divide(num1, num2)
 
-        print(f"Result: {result}")
-        #break  # Exit the outer loop if the calculation is successful
+        print(f"\nResult: {result}")
 
-        answer=print('Do you wanna calculate again? N or Y')
-        if answer=='Y':
-             num1 = float(input("Enter the first number: "))
-             num2 = float(input("Enter the second number: "))
-        else:
+        # Ask if the user wants to calculate again
+        answer = input("\nDo you want to calculate again? (Y/N): ").strip().upper()
+        if answer != 'Y':
+            print("Goodbye!")
             break
-
 
     except ValueError:
         print("Please enter valid numeric values for the numbers.")
